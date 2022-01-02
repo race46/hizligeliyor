@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/main_page">
+
+    <fragment
+        android:id="@+id/main_page"
+        android:name="com.example.myapplication.view.main_page"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_main_page_to_filter"
+            app:destination="@id/filter" />
+        <action
+            android:id="@+id/action_main_page_to_kategori"
+            app:destination="@id/kategori" />
+    </fragment>
+    <dialog
+        android:id="@+id/filter"
+        android:name="com.example.myapplication.view.filter"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" >
+        <action
+            android:id="@+id/action_filter_to_kategori"
+            app:destination="@id/kategori" />
+    </dialog>
+    <fragment
+        android:id="@+id/kategori"
+        android:name="com.example.myapplication.view.kategori"
+        android:label="fragment_kategori"
+        tools:layout="@layout/fragment_kategori" />
+</navigation>
